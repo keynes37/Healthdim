@@ -1,5 +1,5 @@
 # Healthdim
-Class of the health economics
+Class of the health economics 2
 
 
 ## Clases
