@@ -1,0 +1,674 @@
+---
+title: "Básicos de Riesgo e Incertidumbre"
+session: "04"
+subtitle: "Universidad del Norte"
+author: Carlos Yanes Guerra
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "fileasset/themes.css", "fileasset/fonts.css", "fileasset/utilidad.css"]
+    seal: false 
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: dracula
+      slideNumberFormat: "" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "https://platform.twitter.com/widgets.js"
+    includes:
+      in_header: [fileasset/loop.html, fileasset/header.html]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, readxl, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, janitor, kableExtra, countdown, ymlthis, fontawesome, babynames, flextable, DiagrammeR, hrbrthemes, econocharts, plotly)
+# Colores
+red_pink <- "#e64173"
+met_slate <- "#272822" # metropolis font color 
+purple <- "#9370DB"
+green <- "#007935"
+light_green <- "#7DBA97"
+orange <- "#FD5F00"
+turquoise <- "#44C1C4"
+red <- "#b92e34"
+# Knitr opciones
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  #dpi = 300,
+  #cache = T,
+  warning = F,
+  message = F
+)  
+theme_simple <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+theme_market <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.title.x = element_text(hjust = 1, size = 17),
+  axis.title.y = element_text(hjust = 1, angle = 0, size = 17),
+  axis.ticks = element_blank()
+)
+theme_gif <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+wrapper <- function(x, ...) paste(strwrap(x, ...), collapse = "\n")
+ggplot2::theme_set(ggplot2::theme_minimal())
+```
+
+
+
+class: title-slide, center, middle
+
+<span class="fa-stack fa-4x">
+  <i class="fa fa-circle fa-stack-2x" style="color: #ffffffcc;"></i>
+  <strong class="fa-stack-1x" style="color:#3b4245;">`r rmarkdown::metadata$session`</strong>
+</span> 
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$subtitle`
+
+### `r rmarkdown::metadata$author` &#183; IEEC
+
+#### [Departamento de Economía](https://www.uninorte.edu.co/web/departamento-de-economia)
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a0/Academia.edu_logo.svg)
+background-size: contain
+
+# Preguntas sesión anterior? 🤗
+
+---
+background-size: 100%
+background-image: url(https://media.giphy.com/media/zF8Dnq2403mo0xzVJs/giphy.gif)
+
+???
+
+Image test. Taken from gyfty.
+
+---
+class: middle, center
+
+| Hora          | Actividad                               |
+|:--------------|:----------------------------------------|
+| 07:30 - 07:40 | Preguntas o aclaración                  |
+| 07:40 - 09:50 | Sesión 7 Seguros- Riesgo                |
+| 09:50 - 10:05 | *Break* `r emo::ji("coffee")`           |
+| 10:05 - 10:25 | Sesión 5 (Quiz 1)                       |
+| 10:25 - 11:30 | Control de lectura                      |
+
+---
+layout: true
+
+<div class="my-footer"><span>Economía de la Salud | CAYG | www.uninorte.edu.co </span></div>
+
+---
+# Para hoy... intentamos aprender
+
+--
+
+1. Saber de riesgo
+
+--
+
+1. Modelar el riesgo
+
+--
+
+1. Los seguros y su importancia
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/18/Risk_menecment.jpg)
+background-size: contain
+
+# Que entiende usted por Riesgo?
+
+---
+# Definición de riesgo
+
+--
+
+<ru-blockquote>Todos los individuos toman decisiones todos los días. Sin embargo, no siempre es claro para nadie qué resultados pueden derivarse de estas decisiones. Cuando eso sucede, podemos decir que estamos tomando decisiones en situaciones bajo .white[riesgo] o .white[incertidumbre].</ru-blockquote>
+
+
+---
+background-size: 100%
+background-image: url(https://media.giphy.com/media/63UBvg8lOiWIKNimQW/giphy.gif)
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/26/World_Health_Organization_Logo.svg)
+background-size: contain
+
+### Ahora que entiende por incertidumbre?
+
+
+---
+# Recapitulando
+
+
+<ru-blockquote>.RRed[Riesgo:] Los individuos desconocen los diferentes resultados, pero pueden asignarles probabilidad de ocurrencia.</ru-blockquote>
+
+--
+
+<ru-blockquote>.RRed[Incertidumbre:] Los individuos no pueden asignar probabilidad a cada resultado que le pudiera ocurrir aún si pudieran escoger. La naturaleza todo el tiempo le brinda a los individuos estado o estatus de incertidumbre.</ru-blockquote>
+
+---
+background-size: 100%
+background-image: url(https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif)
+
+---
+# Un paso a la vez...
+
+--
+
+La presencia de la .bbrown[incertidumbre] supone que las consecuencias que se derivan de cada alternativa disponible no se conocen con antelación, sino por el contrario, dependen de la ocurrencia de sucesos aleatorios fuera del control de los consumidores y/o agentes económicos.
+
+--
+
+`r fa("angle-double-right", fill="blue")` Cuando elige su carrera profesional.
+
+--
+
+`r fa("angle-double-right", fill="blue")` Cuando va a comprar una casa.
+
+--
+
+`r fa("angle-double-right", fill="blue")` Si compra un seguro (vida, vehículo, etc.).
+
+--
+
+`r fa("angle-double-right", fill="blue")` Cuando elige un presidente.
+
+---
+class: live-code
+
+## Algunos conceptos que requiero para mejorar mis decisiones
+
+--
+
+`r fa("home", fill="red")` Valor Esperado
+
+--
+
+`r fa("home", fill="red")` Utilidad Esperada
+
+--
+
+`r fa("home", fill="red")` Utilidad del Valor Esperado
+
+---
+# Valor esperado
+
+--
+
+
+> El valor esperado es la media de los valores conocidos "certeza", que un individuo sabe que puede ocurrir un evento. Ejemplo: los resultados del lanzamiento de un dado.
+
+--
+
+$$\mathbb{E} [x]= \sum\limits_{i=1}^{n} p_{i} X_{i}$$
+
+--
+
+$$\mathbb{E} [x]= \frac{1}{6}*1+\frac{1}{6}*2+\frac{1}{6}*3+\cdots+\frac{1}{6}*6=3.5$$
+--
+ 
+Que es lo mismo si calculara un promedio normal de:
+
+--
+
+$$\frac{1+2+3+4+5+6}{6}=3.5$$
+
+---
+# Ejemplo valor esperado
+
+--
+
+`r fa("atom", fill="blue")` Suponga que a usted le han propuesto jugar las siguientes loterías, solo debe escoger una de ellas. Cuál prefiere jugar o cuál elegiría: 
+
+--
+
+1. Si se lanza una moneda al aire y sale **cara** gana `$100.000` y si sale *sello* usted pierde `$50.000`.
+
+--
+
+2. Si se lanza una moneda al aire y sale **cara** gana `$200.000` y si sale *sello* usted pierde `$100.000`.
+
+--
+
+3. Si se lanza una moneda al aire y sale **cara** gana `$20.000.000` y si sale *sello* usted pierde `$10.000.000`.
+
+--
+
+> Cuál elige?
+
+---
+# Ejemplo valor esperado
+
+--
+
+`r fa("box-open", fill="blue")` Miremos las opciones con el .RRed[Valor Esperado]
+
+--
+
+Para la lotería 1:
+
+$$\mathbb{E}[x]=100.000\times0.50+\color{#d62013}{-50.000}\times 0.50= 25.000$$
+
+--
+
+Para lotería 2:
+
+$$\mathbb{E}[x]=200.000\times0.50+\color{#d62013}{-100.000}\times 0.50= 50.000$$
+
+--
+
+Finalmente, la lotería 3:
+
+$$\mathbb{E}[x]=20.000.000\times0.50+\color{#d62013}{-10.000.000}\times 0.50= 5.000.000$$
+
+--
+
++ La tercera lotería por este criterio, debería ser elegida.
+
+---
+# Ejemplo valor esperado
+
+--
+
+Las loterías ayudan a mirar lo que finalmente puede desear una persona. Tome a consideración la siguiente oferta:
+
+--
+
+A. Una lotería que le ofrece `$120.000` con probabilidad de 50% o nada con igual probabilidad.
+
+--
+
+B. Ganarse con certeza `$50.000`
+
+--
+
+> Cuál elige?
+
+--
+
++ La lotería que mayor .RRed[Valor esperado] tiene es la elegida.
+
+---
+# Ejemplo valor esperado
+
+--
+
+Para la primera lotería (A):
+
+--
+
+$$\mathbb{E}[x]=0\times 0.50+\color{#44C1C4}{120000}\times 0.50= 60.000$$
+--
+
+Para la segunda
+
+--
+
+$$\mathbb{E}[x]=\color{#44C1C4}{50.000}\times 1= 50.000$$
+--
+
+> Hay que ver que tipo de riesgo toma una persona para mirar que loteria acepta. Para este parte vamos hacer otras adiciones.
+
+---
+# Utilidad esperada
+
+--
+
+`r fa("balance-scale-left")` Cada resultado posible puede cuantificarse en términos de .pink[útiles], y representarse a través de la función de utilidad de un consumidor. Ej: La **función de utilidad** de un individuo es $F(X)=\sqrt{x}$, halle la utilidad esperada.
+
+--
+
+$$U\mathbb{E}[x]=\sqrt{0}\times 0.50+\sqrt{\color{#44C1C4}{120000}}\times 0.50= 173,20$$
+
+--
+
+$$U\mathbb{E}[x]=\sqrt{50.000}= 223,60$$
+--
+
+Si la .hi-purple[Utilidad esperada] de una lotería es mayor a la otra de acuerdo al tipo se elegirá esa.
+
+--
+
+| Tipo             | Función f(x)                    |
+|------------------|---------------------------------|
+| No riesgos       | $\sqrt{x}$                      |
+| Neutrales        | $ax+b$                          |
+| Gusto al riesgo  | $e^x$                           |
+
+--
+
+Estas funciones de utilidad son construidos por .RRed[Matemáticos] que han encontrado esto de forma estructural.
+
+---
+# Utilidad esperada
+
+--
+
+`r fa("atom", fill="blue")` Regresemos al ejemplo original con las loterías de las monedas. Vamos añadir información adicional. Suponga que Mateo tiene una riqueza inicial de 10 millones y él se considera averso al riesgo.
+
+--
+
+$$U\mathbb{E}[x_a]=\sqrt{10.100.000}\times0.50+\sqrt{9.950.000}\times 0.50= 3166,20$$
+--
+
+$$U\mathbb{E}[x_b]=\sqrt{10.200.000}\times0.50+\sqrt{9.900.000}\times 0.50= 3170,08$$
+
+--
+
+$$U\mathbb{E}[x_c]=\sqrt{30.000.000}\times0.50+\sqrt{0}\times 0.50= 1596,18$$
+
+
+--
+
+> Note que por ser averso al riesgo no va a tomar la tercera lotería que le ofrece un mayor premio.
+
+---
+# Utilidad del valor esperado
+
+--
+
+> La utilidad expresada en la esperanza de los valores de los individuos dada la forma de su función de utilidad.
+
+--
+
+Nuevamente, tomemos la información de la lotería de la moneda y hallemos de acuerdo a los valores esperados su .hi-pink[Utilidad del Valor Esperado]
+
+--
+
+$$U (V.E_a)= \sqrt{25.000}= 158,11\; \textrm{útiles}$$
+--
+
+$$U (V.E_b)= \sqrt{50.000}= 223,60\; \textrm{útiles}$$
+
+--
+
+$$U (V.E_c)= \sqrt{5.000.000}= 2236,06\; \textrm{útiles}$$
+
+--
+Si la .hi[Utilidad del Valor Esperado] $U(V.E)$ es > $U(\mathbb{E})$ y el individuo la elige, es porque en realidad es .hi-slate[averso al riesgo]
+---
+class: your-turn
+# Comparaciones
+
+--
+
+| Tipo             | Función f(x)                    |
+|------------------|---------------------------------|
+| Aversión         | $U(V.E)>U.E$                    |
+| Indiferente      | $U(V.E)=U.E$                    |
+| Gusto al riesgo  | $U(V.E)<U.E$                    |
+
+--
+
+Depende mucho de los perfiles de los individuos.
+
+--
+
+.center[**Comparación**]
+```{R, echo = F, escape = F}
+data.frame(
+  v1 = c(1:3),
+  v2 = c("158,11", "223,60", "2236,06"),
+  v3 = c(rep("es menor a",2), rep("es mayor que",1)),
+  v4 = c("3166,20", "3170,08", "1596,87"),
+  v5 = c(rep("Elegir",2), rep("Aversión",1))
+) %>% kable(
+  escape = F,
+  col.names = c("Lotería", "Utilidad Valor esperado", "Signo", "Utilidad esperada", "Decisión?"),
+  align = c("l", "l", "c", "c", "c")
+) %>%
+row_spec(1:3, color = met_slate) %>%
+row_spec(1:3, extra_css = "line-height: 110%;") %>% 
+column_spec(1, italic = T, color = met_slate)
+```
+
+---
+# Prima de Riesgo
+
+--
+
+`r fa("biohazard", fill="blue")` Para el concepto de .pink[Prima], piense en el monto (valor) que debe pagar un individuo para evitar un riesgo.
+
+--
+
+`r fa("biohazard", fill="blue")` Las personas que suelen ser .bbrown[aversas] al riesgo suelen tener primas de riesgo .hi-slate[positivas]. Mientras que los .RRed[amantes] al riesgo suelen tener primas .hi-pink[negativas].
+
+--
+
+`r fa("biohazard", fill="blue")` En cuanto a los .bbrown[neutrales] al riesgo sus primas de riesgo simplemente son cero (0).
+
+--
+
++ La prima de riesgo viene a ser:
+
+--
+
+$$\mathbb{P}.\mathbb{R}= Valor\;Esperado - Equivalente \; Certeza$$
+
+--
+
+> El equivalente de certeza es la plata o valor que hay que darle al individuo para que tenga el mismo nivel de bienestar si enfrenta un riesgo.
+
+--
+
+La .pink[Prima] es lo que esta dispuesto a pagar un individuo para no incurrir en un riesgo.
+
+---
+# Prima de Riesgo
+
+--
+
+Hallemos la prima de riesgo para la lotería (3) en caso tal el individuo no desee enfrentarse a esa situación.
+
+--
+
+`r fa("apple", fill="blue")` Cuanto .hi[dinero] habría que darle a una persona para que no tome una decisión. 
+$$\boxed{ \mathbb{E}.\mathbb{C}= \mathbb{E}(u(x)) }$$
+
+--
+
+`r fa("apple", fill="blue")` Con esto podemos conocer el grado de .hi-slate[compensación] que habría que darle a un individuo para que no incurra en riesgos.
+
+---
+# Equivalente de certeza
+
+--
+
+.pseudocode[Paso(1): Debemos igualar el (E.C) con el valor de la utilidad esperada.]
+
+--
+ 
+$$\mathbb{E}.\mathbb{C}= 1596,87 \quad \textrm{Para la lotería (3)}$$
+
+--
+
+.pseudocode[Paso(2):Después de esto aplicar la función de utilidad sobre este:]
+
+--
+
+$$ \sqrt{\mathbb{EC}}  = 1596,87$$
+--
+
+.pseudocode[Paso(3): Despejar(linealizar) el Equivalente de Certeza]
+
+--
+
+$$ \left(\sqrt{\mathbb{EC}}\right)^2  = \left(1596,87\right)^2$$
+--
+
+Esto nos da apenas el equivalente de certeza: 
+
+--
+
+$$\mathbb{EC}  = 2.549.994$$
+
+---
+# Prima de Riesgo
+
+--
+
+.pseudocode[Paso(4): Calcular la prima de riesgo]
+
+--
+
+$$\mathbb{P}.\mathbb{R}= Valor\;Esperado - Equivalente \; Certeza$$
+
+--
+
+$$\mathbb{P}.\mathbb{R}= 15.000.000- 2.549.994 =12.450.006$$
+
+--
+
+Este es el .hi[monto] de .hi[dinero] (prima de riesgo) que debe pagar el individuo a una .hi-slate[aseguradora] para no incurrir en ese riesgo o tener que tomar la decisión de elegir eso.
+
+--
+
+*Recuerde que el valor esperado de él es*:
+
+$$\mathbb{E}[x]=30.000.000\times0.50+\color{#d62013}{0}\times 0.50= 15.000.000$$
+---
+# Prima de Riesgo
+
+--
+
+Desde luego nadie esta obligado a pagar la prima pero en caso de que *Mateo* quisiera hacerlo es lo que le correspondería pagar para no enfrentar esa loteria.
+
+--
+
++ En otros casos opera el valor normal sin incluir riqueza del individuo ni situación inicial y este es:
+
+--
+
+$$\mathbb{P}.\mathbb{R}= 5.000.000- 2.549.994 =2.450.006$$
+
+--
+
+La prima o valor para cualquier persona sin importar su riqueza es de `$2.450.006`.
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/18/Risk_menecment.jpg)
+background-size: contain
+
+# Vamos a mirar algo mas
+
+---
+class: middle
+
+**Pregunta general:** Asuma que usted va a vivir con certeza los próximos 30 años con buena salud. **Todos los años tienen el mismo valor para usted**?
+
+--
+
+En caso que usted diga que **NO** tienen el mismo valor, qué años considera usted que valen mas que los otros años?
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/26/World_Health_Organization_Logo.svg)
+background-size: contain
+
+### 🛖
+
+---
+
+**Pregunta general:** ¿Cuál de las siguientes loterías escogería usted si le proponen:
+
+--
+
+> **A.** Vivir 30 años con buena salud con una probabilidad de 50% o un 50% de morir inmediatamente.<br/>
+> **B.** Vivir con certeza X años con buena salud. 
+
+--
+
+Qué valor debe tener X en años para que usted sea .hi[indiferente] entre elegir la lotería A o la B?.
+
+---
+
+**Pregunta general:** ¿Qué elegiría?
+
+> **A.** Vivir los próximos 30 años con buena salud<br/>
+> **B.** Vivir 40 años con buena salud con una probabilidad de 80%  o morir inmediatamente con probabilidad del 20%.<br/> 
+
+--
+
+**Pregunta general:** ¿Qué elegiría?
+
+> **A.** Vivir 40 años con buena salud con una probabilidad de 20%  o morir inmediatamente con probabilidad del 80%.<br/>
+> **B.** Vivir 30 años con buena salud con una probabilidad de 25%  o morir inmediatamente con probabilidad del 75%.
+
+---
+
+**Pregunta general:** ¿Cuanto debe ser el número de X años que deben ofrecerle a un individuo con certeza para que iguale la lotería de tener un 90% de probabilidad de vivir 40 años o de tener muerte inmediata con probabilidad de 10%?
+
+--
+
+¿Cuanto debe ser el número de X años que deben ofrecerle a un individuo con certeza para que iguale la lotería de tener un 75% de probabilidad de vivir 40 años o de tener muerte inmediata con probabilidad de 25%?
+
+--
+
+¿Cuanto debe ser el número de X años que deben ofrecerle a un individuo con certeza para que iguale la lotería de tener un 50% de probabilidad de vivir 40 años o de tener muerte inmediata con probabilidad de 50%?
+
+--
+
+¿Cuanto debe ser el número de X años que deben ofrecerle a un individuo con certeza para que iguale la lotería de tener un 10% de probabilidad de vivir 40 años o de tener muerte inmediata con probabilidad de 90%?
+
+
+
+
+---
+# Bibliografía
+
+`r fa('book')` Stevens, T. (2014). Healthcare Economics Made Easy by Daniel Jackson. The Ulster Medical Journal, 83(3), 185.
+
+`r fa('book')` Phelps, C. E. (2017). Health economics. Routledge.
+
+`r fa('book')` Lee, R. H., Health Administration Press, & Association of University Programs in Health Administration. (2009). Economics for healthcare managers. Chicago, IL: Health Administration Press.
+
+`r fa('book')` Nicholson, W. (2005). Teoría microeconómica. Principios básicos y ampliaciones. Ediciones Paraninfo, SA.
+
+
+---
+class: your-turn
+
+## Gracias por su atención!
+
+### Alguna pregunta adicional?
+
+#### Carlos Andres Yanes Guerra
+`r fa("envelope", fill="red")` cayanes@uninorte.edu.co
+`r fa("twitter", fill="cyan")` keynes37
+
+
+
+

@@ -1,0 +1,664 @@
+---
+title: "Evaluación Económica"
+session: "05"
+subtitle: "Universidad del Norte"
+author: Carlos Yanes Guerra
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "fileasset/themes.css", "fileasset/fonts.css", "fileasset/utilidad.css"]
+    seal: false 
+    lib_dir: libs
+    nature:
+      # autoplay: 5000
+      highlightStyle: dracula
+      slideNumberFormat: "" 
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "https://platform.twitter.com/widgets.js"
+    includes:
+      in_header: [fileasset/loop.html, fileasset/header.html]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, readxl, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, janitor, kableExtra, countdown, ymlthis, fontawesome, babynames, flextable, DiagrammeR, hrbrthemes, econocharts, plotly)
+# Colores
+red_pink <- "#e64173"
+met_slate <- "#272822" # metropolis font color 
+purple <- "#9370DB"
+green <- "#007935"
+light_green <- "#7DBA97"
+orange <- "#FD5F00"
+turquoise <- "#44C1C4"
+red <- "#b92e34"
+# Knitr opciones
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  #dpi = 300,
+  #cache = T,
+  warning = F,
+  message = F
+)  
+theme_simple <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+theme_market <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.title.x = element_text(hjust = 1, size = 17),
+  axis.title.y = element_text(hjust = 1, angle = 0, size = 17),
+  axis.ticks = element_blank()
+)
+theme_gif <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+wrapper <- function(x, ...) paste(strwrap(x, ...), collapse = "\n")
+ggplot2::theme_set(ggplot2::theme_minimal())
+```
+
+
+
+class: title-slide, center, middle
+
+<span class="fa-stack fa-4x">
+  <i class="fa fa-circle fa-stack-2x" style="color: #ffffffcc;"></i>
+  <strong class="fa-stack-1x" style="color:#3b4245;">`r rmarkdown::metadata$session`</strong>
+</span> 
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$subtitle`
+
+### `r rmarkdown::metadata$author` &#183; IEEC
+
+#### [Departamento de Economía](https://www.uninorte.edu.co/web/departamento-de-economia)
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/26/World_Health_Organization_Logo.svg)
+background-size: contain
+
+# Preguntas sesión anterior? 🤚
+
+---
+background-size: 100%
+background-image: url(https://media.giphy.com/media/3oeSATxdLfLsQM6cRG/giphy.gif)
+
+???
+
+Image test. Taken from gyfty.
+ 
+---
+class: middle, center
+
+| Hora          | Actividad                                 |
+|:--------------|:------------------------------------------|
+| 14:35 - 15:00 | Preguntas generales                       |
+| 15:00 - 15:10 | Quiz 3 (Abierto).                                   |
+| 15:10 - 16:20 | Sesión 9 (Modelos de evaluación económica)|
+| 16:45 - 17:15 | *Break* `r emo::ji("coffee")`             |
+| 17:15 - 17:10 | Comentarios varios                        |
+| 17:10 - 18:25 | Sobre la parte final                      |
+
+---
+class: your-turn
+
+# <i class="fas fa-cloud"></i>
+
+## Actividad Pre-Final: dirijase a
+
+<https://www.socrative.com/>
+
+### Siga las siguientes instrucciones:
+
+1. Ingrese como estudiante
+
+2. Coloque su nombre completo
+
+3. Responda cada una de las preguntas
+
+```{r echo = FALSE}
+countdown(minutes = 15, update_every = 20)
+```
+
+
+---
+layout: true
+
+<div class="my-footer"><span>Economía de la Salud | CAYG | www.uninorte.edu.co </span></div>
+
+
+---
+# Para hoy... intentamos aprender
+
+--
+
+1. Mirar el concepto de evaluación económica
+
+--
+
+1. Entender el concepto de monetización
+
+--
+
+1. Analizar los estados de la evaluación económica
+
+---
+# Conceptos claves
+
+--
+
+`r fa("angle-double-right", fill="blue")` Escasez, Costo de oportunidad, eficiencia, valor de los beneficios.
+
+--
+
+`r fa("angle-double-right", fill="blue")` .blue[Evaluación económica] medición de la mejor alternativa a usar.
+
+--
+
+### Un par de conceptos generales
+
+--
+
+`r fa("capsules", fill="red")` El análisis comparativo de acción alternativos en términos tanto de sus costos como de sus consecuencias con el fin de ayudar a las decisiones políticas y administrativas de las instituciones de salud. (Drummond et al)
+
+--
+
+`r fa("capsules", fill="blue")` La evaluación económica no es "elegir lo más barato". La opción optima de una práctica eficiente no consiste simplemente en reducir los costos.  Si lo fuera, el procedimiento más eficiente sería no hacer nada, ya que eso lleva los costos a cero. (Alan Maynard)
+
+---
+# Un poco de historia de la evaluación económica
+
+--
+
+`r fa("calendar-alt", fill="blue")` Inicios del siglo XIX, definición del valor público de los bienes
+
+--
+
+`r fa("calendar-alt", fill="blue")` Para 1936, USA le pide a su cuerpo de marines que creen métodos sistemáticos con el objeto de medir los costos y beneficios de las vías fluviales.
+
+--
+
+`r fa("calendar-alt", fill="blue")` En 1950 el departamento de defensa hace uso de la métrica de costo por asesinato (CEA).
+
+--
+
+`r fa("calendar-alt", fill="blue")` Hoy por hoy se hace uso para proyectos públicos a nivel general.
+
+---
+class: inverse, middle
+
+# Practicidad
+
+--
+
+#### Ejemplo de evaluación económica
+
+---
+# Un ejemplo
+
+--
+
+<img src="images/dea1.png" width="820" />
+
+---
+# Un ejemplo
+
+
+
+<img src="images/dea2.png" width="820" />
+
+---
+# Un ejemplo
+
+
+
+<img src="images/dea3.png" width="820" />
+
+---
+class: inverse, middle
+
+# Practicidad
+
+--
+
+#### Tipos de evaluación económica
+
+---
+# De la evaluación económica
+
+--
+
+`r fa("check-square")` Minimización del costo
+
+--
+
+`r fa("check-square")` Costo efectividad
+
+--
+
+`r fa("check-square")` Costo utilidad
+
+--
+
+`r fa("check-square")` Costo Beneficio
+
+--
+
+El .RRed[análisis] *comparativo* es mirar la alternativa que en términos de **costos** y **consecuencias** mejoren las opciones de decisión.
+
+--
+
++ Mirar siempre la **eficiencia**, **efectividad** y **disposición** de los distintos actores (stakeholders)
+
+---
+# De la evaluación económica
+
+--
+
+```{r, cost1, echo=FALSE}
+mi_im <- data.frame(
+  "A" = c("Costo minimización", "Costo efectividad","Costo utilidad", "Costo Beneficio"),
+  "B" = c(" ", " ", " ", " "),
+  "C" = c(" ", " ", " ", " "))
+
+ft <- flextable(mi_im)
+ft<-set_header_labels(ft, A = "Clasificación", B = "Costo", C="Resultados")
+ft <- theme_vanilla(ft)
+ft <- add_footer_lines(ft, "Fuente: Appuhamy & Clark (2021)")
+ft <- color(ft, part = "footer", color = "#666666")
+ft <- set_caption(ft, caption = "Tipos de costos")
+ft
+```
+
+---
+
+class: live-code
+
+# Como funciona todo esto?...
+
+--
+
++ Vamos por pasos 
+
+--
+
+## Minimizar costos
+
+---
+# Minimizar Costos
+
+--
+
+`r fa("angle-double-right", fill="blue")` Antes de nada, hablemos de los costos que vamos a enfrentar.
+
+--
+
+<md-blockquote>.RRed[Costos Directos]: Todos aquellos asociados a la intervención. P.e: *Personal de la salud, equipo de trabajo, transporte, logística.*</md-blockquote>
+
+--
+
+<md-blockquote>.RRed[Costos Indirectos]: Aquellos que no se asocian a la intervención. P.e: *Salarios perdidos por enfermedad (disposición), algunos arriendos.*</md-blockquote>
+
+--
+
+<md-blockquote>.RRed[Costos Intangibles]: Aquellos que es difícil de contabilizar y que afectan directa/indirectamente la intervención. P.e: *Dolor, sufrimiento, pena, etc.*</md-blockquote>
+
+---
+# Minimizar Costos: Aplicación
+
+--
+
+<img src="images/hgr1.png" width="540" />
+
+
+--
+
+`r fa("check-circle", fill="red")` Podríamos simplemente escoger el de menor valor que nos ofrece la farmacéutica.
+
+--
+
+`r fa("check-circle", fill="red")` Algunas veces será la mejor oferta del momento y la forma de cuantificarlo es por el dinero gastado en él (tratamiento/medicamento).
+
+---
+# Minimizar Costos: Aplicación
+
+--
+
+```{r, cost2, echo=FALSE}
+mi_im1 <- data.frame(
+  "A" = c("Costo minimización", "Costo efectividad","Costo utilidad", "Costo Beneficio"),
+  "B" = c("$ Pesos", " ", " ", " "),
+  "C" = c("Mismo resultado", " ", " ", " "))
+
+ft1 <- flextable(mi_im1)
+ft1<-set_header_labels(ft1, A = "Clasificación", B = "Costo", C="Resultados")
+ft1 <- theme_vanilla(ft1)
+ft1 <- add_footer_lines(ft1, "Fuente: Appuhamy & Clark (2021)")
+ft1 <- color(ft1, part = "footer", color = "#666666")
+ft1 <- set_caption(ft1, caption = "Tipos de costos")
+ft1
+```
+
+---
+
+class: live-code
+
+# Como funciona todo esto?...
+
+--
+
++ Vamos por pasos 
+
+--
+
+## Costo efectividad
+
+---
+# Costo efectividad: Aplicación
+
+--
+
+<img src="images/hgr2.png" width="540" />
+
+--
+
+`r fa("check-circle", fill="red")` Las **unidades** son claves, es mas especifico y se requiere del grupo de especialistas para ir midiendo cada fase. 
+
+---
+# Costo efectividad: Aplicación
+
+--
+
+<img src="images/hgr3.png" width="540" />
+
+
+
+---
+# Costo efectividad: Aplicación
+
+--
+
+`r fa("chess-bishop", fill="red")` Suponga que tenemos el programa de dieta, y esta consulta cuesta $300.000. Con la revisión de resultados vemos que el paciente pierde .RRed[2 Kilos], entonces tenemos:
+
+--
+
+<font size="+8"> $$300.000 \div 2= \$150000\; \text{Pesos por kilo}$$ </font>
+
+--
+
+Por otro lado, entonces si se le da el medicamento de valor de $450.000 pero el paciente pierde hasta 5 kilos, entonces:
+
+--
+
+<font size="+8"> $$450.000 \div 5= \$90000\; \text{Pesos por kilo}$$ </font>
+
+--
+
+.RRed[Se puede pensar] que la opción mejor **costo-efectiva** es esta última.
+
+---
+# Costo efectividad: Aplicación
+
+--
+
+```{r, cost3, echo=FALSE}
+mi_im2 <- data.frame(
+  "A" = c("Costo minimización", "Costo efectividad","Costo utilidad", "Costo Beneficio"),
+  "B" = c("$ Pesos", "$ Pesos ", " ", " "),
+  "C" = c("Mismo resultado", "Unidad Natural ", " ", " "))
+
+ft1 <- flextable(mi_im2)
+ft1<-set_header_labels(ft1, A = "Clasificación", B = "Costo", C="Resultados")
+ft1 <- theme_vanilla(ft1)
+ft1 <- add_footer_lines(ft1, "Fuente: Appuhamy & Clark (2021)")
+ft1 <- color(ft1, part = "footer", color = "#666666")
+ft1 <- set_caption(ft1, caption = "Tipos de costos")
+ft1
+```
+
+---
+
+class: live-code
+
+# Como funciona todo esto?...
+
+--
+
+## Costo utilidad
+
+---
+# Costo utilidad
+
+--
+<center>
+<img src="images/hgr5.png" width="540" />
+</center>
+--
+
+`r fa("chess-rook", fill="red")` Debemos mirar en una unidad común de medida.
+
+--
+
+> (QALY): Años de vida ajustados por calidad
+
+--
+
+Es la unidad de utilidad aplicada a la valoración de alternativas.
+
+--
+
+<font size="+3">$$QALY: \;\text{Años de vida ganados} \times \; \text{Calidad de vida}$$</font>
+
+---
+# Costo utilidad
+
+--
+<center>
+<img src="images/qaly.png" width="540" />
+Fuente: Whitehead & Ali (2010)
+</center>
+--
+
+En alguna ocasión de nuestras vidas podemos enfrentar un tipo de eventualidad.
+
+--
+
+El criterio de .RRed[QALY] está en un intervalo entre 0 y 1.
+
+--
+
+$$\begin{aligned}
+QUALY: 0 & \quad \text{Lo peor}\\
+QUALY: 1 & \quad \text{Lo mejor}
+\end{aligned}$$
+
+---
+# Costo utilidad: Aplicación
+
+--
+
+`r fa("chess-bishop", fill="red")` Tenemos un tratamiento establecido a una persona (paciente) y se ha extendido su vida por .RRed[5] años mas.
+
+--
+
+$$\begin{aligned}
+\text{QUALY} \; A: (0.2)\; \text{calidad de vida} \times & \text{años ganados}\; (5) = 1\\
+\text{QUALY} \; B: (1)\; \text{calidad de vida} \times & \text{años ganados}\; (5) =5
+\end{aligned}$$
+
+--
+
+La intervención B es mejor .RRed[Costo-utilidad] que la intervención de A.
+
+--
+
+`r fa("child", fill="red")` La calidad de vida puede medirse de varias maneras o formas:
+
+--
+
++ Cuestionario SF36
+
+--
+
++ EuroQol-5D
+
+---
+# Costo utilidad: Aplicación
+
+--
+
+```{r, cost4, echo=FALSE}
+mi_im3 <- data.frame(
+  "A" = c("Costo minimización", "Costo efectividad","Costo utilidad", "Costo Beneficio"),
+  "B" = c("$ Pesos", "$ Pesos ", "$ Pesos ", " "),
+  "C" = c("Mismo resultado", "Unidad Natural ", "Medida (QUALY) ", " "))
+
+ft2 <- flextable(mi_im3)
+ft2<-set_header_labels(ft2, A = "Clasificación", B = "Costo", C="Resultados")
+ft2 <- theme_vanilla(ft2)
+ft2 <- add_footer_lines(ft2, "Fuente: Appuhamy & Clark (2021)")
+ft2 <- color(ft2, part = "footer", color = "#666666")
+ft2 <- set_caption(ft2, caption = "Tipos de costos")
+ft2
+```
+---
+class: live-code
+
+# Como funciona todo esto?...
+
+--
+
+## Costo beneficio
+
+---
+# Costo beneficio
+
+--
+<center>
+<img src="images/hgr4.png" width="540" />
+</center>
+--
+
+`r fa("chess-rook", fill="red")` Es mucho mas compleja. Requiere de múltiples enfoques, entre ellos (información a medida, background teórico, entre otros).
+
+---
+# Costo beneficio
+
+--
+
+> Disponibilidad a pagar y capital humano son las herramientas a cuantificar.
+
+--
+
+Dentro de .RRed[Disponibilidad a pagar] se encuentra *beneficios del tratamiento* como también *costo de evadir una enfermedad*
+
+--
+
+Para la parte de .RRed[Capital Humano] se tiene en cuenta lo que es *perdida o ganancia de ingresos debido a la enfermedad*
+
+--
+
+Hay que enmarcar la posibilidad de la aleatorización de los pacientes que serán tratados y aquellos que seran debidamente controles o grupos de comparación.
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+```{r, cost5, echo=FALSE}
+mi_im5 <- data.frame(
+  "A" = c("Costo minimización", "Costo efectividad","Costo utilidad", "Costo Beneficio"),
+  "B" = c("$ Pesos", "$ Pesos ", "$ Pesos ", " $ Pesos "),
+  "C" = c("Mismo resultado", "Unidad Natural ", "Medida (QUALY) ", " $ Pesos "))
+
+ft3 <- flextable(mi_im5)
+ft3<-set_header_labels(ft3, A = "Clasificación", B = "Costo", C="Resultados")
+ft3 <- theme_vanilla(ft3)
+ft3 <- add_footer_lines(ft3, "Fuente: Appuhamy & Clark (2021)")
+ft3 <- color(ft3, part = "footer", color = "#666666")
+ft3 <- set_caption(ft3, caption = "Tipos de costos")
+ft3
+```
+---
+class: live-code
+
+# Qué falta?...
+
+--
+
+## Solo unos detalles...
+
+---
+# Etapas de la evaluación
+
+--
+
+1. Plantear el requerimiento / servicio a proveer
+
+--
+
+1. Identificar todos los costos de implementación y métricas
+
+--
+
+1. Ajustar tiempos
+
+--
+
+1. Ajustes de incertidumbre
+
+--
+
+1. .RRed[Tomar la decisión]
+
+
+
+---
+# Bibliografía
+
+`r fa('book')` Whitehead Sarah J., &  Ali S. , Health outcomes in economic evaluation: the QALY and utilities, British Medical Bulletin, Volume 96, Issue 1, December 2010, Pages 5–21,
+
+`r fa('book')` Cabasés, J. M., & Oliva, J. (2011). El gobierno de la sanidad frente a la crisis económica. Notas sobre economía de la salud y sostenibilidad del sistema sanitario. Cuadernos de información económica, 225, 57-62.
+
+`r fa('book')`Phelps, C. E. (2017). Health economics. Routledge.
+
+`r fa('book')` Notas de Health economics from Ranil Appuhamy & Anitha Appuhamy.
+
+`r fa('book')` Notas de clase de Health economics Smith & Wright 
+
+---
+class: your-turn
+
+## Gracias por su atención!
+
+### Alguna pregunta adicional?
+
+#### Carlos Andres Yanes Guerra
+`r fa("envelope", fill="red")` cayanes@uninorte.edu.co
+`r fa("twitter", fill="cyan")` keynes37
+
+
+

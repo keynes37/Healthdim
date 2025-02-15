@@ -1,0 +1,220 @@
+/*~~~~~~~~~~~~~~~~~~~~*/
+/* Color y Cuadro */
+/*~~~~~~~~~~~~~~~~~~~~*/
+
+.RRed {
+  color: #eb1f10;
+}
+
+/* Add blue tag */
+.blue {
+  color: #0D395F;
+  font-weight: bold;
+}
+
+/* Add grey tag */
+.grey {
+  color: #4C4B4C;
+}
+
+.lightgrey {
+  color: #AAA59F;
+}
+
+.bbrown {
+  color: #fcba03;
+}
+
+.pink {
+  color: #f21dcb;
+}
+
+.bblack{
+  color: #0b0617;
+}
+
+
+/* Force black */
+.black {
+  color: black;
+  font-weight: bold;
+}
+
+/* Add white tag */
+.white {
+  color: white;
+}
+
+/* Font size tags */
+.big {
+  font-size: 1.5em;
+}
+
+/* blockqui */
+md-blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-left: solid 10px #0D395F;
+  background-color: #AAA59F;
+  padding: 1em;
+  color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/* ru blockquote */
+ru-blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-left: solid 10px #cc0033;
+  background-color: #818181;
+  padding: 1em;
+  color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/* Nuevos de lo demas */
+
+.hi {
+  font-weight: 600;
+  color: #e64173 !important;
+}
+.hi-pink {
+  font-weight: 600;
+  color: #e64173 !important;
+}
+.hi-slate {
+  font-weight: 600;
+  color: #314f4f !important;
+}
+.hi-turquoise {
+  font-weight: 600;
+  color: #44C1C4 !important;
+}
+.hi-purple {
+  font-weight: 600;
+  color: #6A5ACD !important;
+}
+.hi-orange {
+  font-weight: 600;
+  color: #FFA500 !important;
+}
+.hi-yellow{
+  font-weight: 600;
+  color: #D8BD44 !important;
+}
+.hi-green {
+  font-weight: 600;
+  color: #7CAE96 !important;
+}
+.hi-grey {
+  font-weight: 600;
+  color: #8AA19E !important;
+}
+.hi-blue {
+  font-weight: 600;
+  color: #54778B !important;
+}
+.hi-red {
+  font-weight: 600;
+  color: #fb6107 !important;
+}
+/* Pink text */
+.pink {
+  color: #e64173 !important;
+}
+/* Slate ("darkslategrey") text */
+.slate {
+  color: #314f4f !important;
+}
+/* Turquoise ("lightseagreen") text */
+.turquoise {
+  color: #44C1C4 !important;
+}
+/* Purple-ish ("slateblue") text */
+.purple {
+  color: #6A5ACD !important;
+}
+/* Orange ("orange") text */
+.orange {
+  color: #FFA500 !important;
+}
+.yellow{
+  color: #D8BD44 !important;
+}
+.green {
+  color: #7CAE96 !important;
+}
+.grey {
+  color: #8AA19E !important;
+}
+.blue {
+  color: #54778B !important;
+}
+.red {
+  color: #fb6107 !important;
+}
+
+/* Mono-spaced font */
+.mono {
+  font-family: monospace;
+}
+/* Underline */
+.ul {
+  text-decoration: underline;
+}
+/* Overline */
+.ol {
+  text-decoration: overline;
+}
+.st {
+  text-decoration: line-through;
+}
+/* Fraction */
+.top{
+  display:inline-block;
+}
+.bottom{
+  border-top:solid black 1px;
+  display:inline-block;
+  clear:left;
+}
+
+/* Mono-spaced font, smaller */
+.mono-small {
+  font-family: 'Fira Code';
+  font-size: 20px;
+}
+.mono-small .mjx-chtml {
+  font-size: 103% !important;
+}
+
+.pseudocode, .pseudocode-small {
+  font-family: 'Fira Code';
+  background: #f8f8f8;
+  border-radius: 3px;
+  padding: 10px;
+}
+.pseudocode-small {
+  font-size: 20px;
+}
+
+.more-left {
+  float: left;
+  width: 63%;
+}
+.less-right {
+  float: right;
+  width: 31%;
+}
+.more-right ~ * {
+  clear: both;
+}
+
