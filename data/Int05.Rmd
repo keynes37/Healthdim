@@ -190,7 +190,7 @@ layout: true
 
 --
 
-<img src="images/case01.png" width="780" />
+<img src="images/case01.png" width="680" />
 
 ---
 class: inverse, middle
@@ -449,7 +449,51 @@ ft1
 ```
 
 ---
+# Costo efectividad: Aplicación
 
+--
+
+`r fa("bell", fill="red")` Caso: **Vacunación contra el Virus del Papiloma Humano (VPH)**
+
+--
+
+.hi-pink[Contexto]: El Virus del Papiloma Humano (VPH) es una de las infecciones de *transmisión sexual* más comunes y está asociado con varios tipos de cáncer, incluyendo el cáncer de cuello uterino.
+
+--
+
+### Intervenciones Comparadas:
+
+- Vacunación contra el VPH para niñas de 12 años.
+- No vacunación y seguimiento con pruebas de detección regulares.
+
+--
+
+.RRed[Costos Considerados]:
+
+- Vacunación: Costo de las dosis de la vacuna, administración, y campañas de concientizacion.
+- No vacunación: Costo de las pruebas de detección, tratamiento de lesiones precancerosas y cáncer, y seguimiento médico.
+---
+# Costo efectividad: Aplicación
+
+--
+
+.hi-slate[Efectividad Medida] 😬:
+
+- Vacunación: Reducción en la incidencia de infecciones por VPH y cáncer de cuello uterino.
+- No vacunación: Incidencia de infecciones por VPH y cáncer de cuello uterino sin intervención preventiva.
+
+--
+
+### Resultados del Estudio:
+
+- Costo de la Vacunación: $100 por niña vacunada.
+- Costo del No Vacunación: $200 por paciente tratada por cáncer de cuello uterino.
+
+--
+
+`r fa("long-arrow-alt-right", fill="red")` **Efectividad**: La vacunación reduce la incidencia de cáncer de cuello uterino en un 70%.
+
+---
 class: live-code
 
 # Como funciona todo esto?...
@@ -539,6 +583,34 @@ La intervención B es mejor .RRed[Costo-utilidad] que la intervención de A.
 
 --
 
+### Otros ejemplos con QALY:
+
+- Un año en perfecto estado de salud: 1 año × 1 (utilidad) = 1 QALY.
+- Un año con una enfermedad crónica: 1 año × 0.5 (utilidad) = 0.5 QALYs.
+- Medio año en perfecto estado de salud: 0.5 años × 1 (utilidad) = 0.5 QALYs.
+
+--
+
+El .hi-pink[QALY] se utiliza para comparar la **efectividad** de diferentes intervenciones médicas y ayudar a los responsables de políticas de salud a tomar decisiones informadas sobre la asignación de recursos. Por ejemplo, si una intervención cuesta `$10,000` y proporciona 2 QALYs, el costo por QALY sería `$5,000`. Este valor se puede comparar con otras intervenciones para determinar cuál ofrece mejor relación .hi-orange[costo-efectividad].
+
+---
+# Costo utilidad: Aplicación
+
+--
+
+
+_Recordemos el casod de vacunación para VPH_: Costo por Año de Vida Ajustado por Calidad (QALY) Ganado: La vacunación tiene un costo de `$1,000` por QALY ganado, mientras que el no vacunación tiene un costo de `$5,000` por QALY ganado.
+
+--
+
+En conclusión: La vacunación contra el VPH es más .hi-pink[costo-utilidad] que no vacunar, ya que reduce significativamente la incidencia de cáncer de cuello uterino y los costos asociados a su tratamiento.
+
+
+---
+# Costo utilidad: Aplicación
+
+--
+
 ```{r, cost4, echo=FALSE}
 mi_im3 <- data.frame(
   "A" = c("Costo minimización", "Costo efectividad","Costo utilidad", "Costo Beneficio"),
@@ -593,6 +665,67 @@ Para la parte de .RRed[Capital Humano] se tiene en cuenta lo que es *perdida o g
 Hay que enmarcar la posibilidad de la aleatorización de los pacientes que serán tratados y aquellos que seran debidamente controles o grupos de comparación.
 
 ---
+# Costo beneficio
+
+--
+
+### Definición del Problema y Objetivos:
+
+- Identificar claramente el .hi-pink[problema de salud] que se desea abordar y los objetivos de la *intervención*.
+
+--
+
+`r fa("info-circle", fill="red")` Identificación de Alternativas:
+
+--
+
+- Hacer una lista de todas las .hi-slate[posibles intervenciones] o tratamientos que podrían abordar el problema.
+
+--
+
+`r fa("info-circle", fill="red")` Medición de Costos:
+
+--
+
+- Costos Directos: Gastos en bienes y servicios directamente relacionados con la intervención (e.g., medicamentos, hospitalización).
+- Costos Indirectos: Pérdidas de productividad debido a la enfermedad o tratamiento (e.g., días de trabajo perdidos).
+- Costos Intangibles: Impacto en la calidad de vida (e.g., dolor y sufrimiento).
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+`r fa("mug-hot", fill="blue")` Medición de Beneficios:
+
+--
+
+- **Beneficios Directos**: Reducción de costos médicos futuros debido a la intervención (e.g., menos hospitalizaciones).
+- **Beneficios Indirectos**: Incremento en la productividad debido a la mejora en la salud (e.g., más días de trabajo).
+- **Beneficios Intangibles**: Mejora en la calidad de vida (e.g., menos dolor y sufrimiento).
+
+--
+
+`r fa("chess-rook", fill="red")` Descuento de Costos y Beneficios:
+
+- Ajustar los .RRed[costos] y .hi-slate[beneficios futuros] a su valor presente utilizando una **tasa de descuento**, ya que el valor del dinero cambia con el tiempo.
+
+--
+
+`r fa("chess-rook", fill="blue")` Cálculo del Cociente Beneficio-Costo (BCR):
+
+- Dividir el **valor presente** de los beneficios por el valor presente de los costos. Un BCR mayor a 1 indica que los beneficios superan los costos.
+
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+<img src="images/beneficio23.png" width="580" />
+
+
+---
 # Costo beneficio: Aplicación
 
 --
@@ -611,6 +744,82 @@ ft3 <- color(ft3, part = "footer", color = "#666666")
 ft3 <- set_caption(ft3, caption = "Tipos de costos")
 ft3
 ```
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+`r fa("bell", fill="red")` Caso: **Implementación de un Programa de Ejercicio para Personas con Diabetes Tipo 2**
+
+--
+
+`r fa("long-arrow-alt-right", fill="red")` Problema y Objetivos:
+
+- Reducir las complicaciones de la diabetes tipo 2 mediante un programa de ejercicio regular.
+
+--
+
+### Alternativas:
+
+--
+
+- Programa de ejercicio supervisado.
+- No intervención (grupo de control).
+
+--
+
+.RRed[Costos]:
+- Directos: $500 por persona para el programa de ejercicio (entrenadores, instalaciones).
+- Indirectos: $200 por persona en tiempo perdido de trabajo.
+- Intangibles: No aplicable en este caso.
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+`r fa("mug-hot", fill="blue")` .hi-slate[Beneficios]:
+- Directos: Ahorro de $1,000 por persona en costos médicos futuros (menos hospitalizaciones y medicamentos).
+- Indirectos: Incremento de $300 por persona en productividad (menos días de trabajo perdidos).
+- Intangibles: Mejora en la calidad de vida valorada en $200 por persona.
+
+-- 
+
+.hi-pink[Descuento]: Supongamos una tasa de descuento del 3% anual para ajustar los valores futuros.
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+`r fa("fighter-jet", fill="blue")`  .hi-orange[Cálculo del BCR]:
+
+- Beneficios totales: `$1,000` (directos) + `$300` (indirectos) + `$200` (intangibles) = $1,500.
+
+- Costos totales: `$500` (directos) + `$200` (indirectos) = $700.
+
+--
+
+BCR = `$1,500` / `$700` ≈ 2.14.
+
+En este *ejemplo*, el .hi-pink[programa de ejercicio] tiene un BCR de 2.14, lo que significa que por cada dólar invertido, se obtienen $2.14 en beneficios. Esto indica que el programa es económicamente viable y beneficioso
+
+---
+# Costo beneficio: Aplicación
+
+--
+
+Supongamos que esperas recibir $1,000 en 3 años y la tasa de descuento es del 3% anual. Para calcular el valor presente, usarías la fórmula de la siguiente manera:
+
+$$VP=\dfrac{1000}{(1+0.03)^{3}} \approx 915.14$$
+
+--
+
+Esto significa que `$1,000` recibidos en 3 años tienen un valor presente de aproximadamente `$915.84` hoy, si la tasa de descuento es del 3%.
+
+
+
 ---
 class: live-code
 
