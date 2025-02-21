@@ -115,34 +115,12 @@ class: middle, center
 
 | Hora          | Actividad                                 |
 |:--------------|:------------------------------------------|
-| 14:35 - 15:00 | Preguntas generales                       |
-| 15:00 - 15:10 | Quiz 3 (Abierto).                                   |
-| 15:10 - 16:20 | Sesión 9 (Modelos de evaluación económica)|
-| 16:45 - 17:15 | *Break* `r emo::ji("coffee")`             |
+| 15:30 - 15:40 | Preguntas generales                       |
+| 15:40 - 15:55 | Instrucción comentadores                  |
+| 15:55 - 16:40 | Sesión 9 (Modelos de evaluación económica)|
+| 16:40 - 17:15 | *Break* `r emo::ji("coffee")`             |
 | 17:15 - 17:10 | Comentarios varios                        |
-| 17:10 - 18:25 | Sobre la parte final                      |
-
----
-class: your-turn
-
-# <i class="fas fa-cloud"></i>
-
-## Actividad Pre-Final: dirijase a
-
-<https://www.socrative.com/>
-
-### Siga las siguientes instrucciones:
-
-1. Ingrese como estudiante
-
-2. Coloque su nombre completo
-
-3. Responda cada una de las preguntas
-
-```{r echo = FALSE}
-countdown(minutes = 15, update_every = 20)
-```
-
+| 17:10 - 18:25 | Actividad final                           |
 
 ---
 layout: true
@@ -206,6 +184,13 @@ layout: true
 --
 
 `r fa("calendar-alt", fill="blue")` Hoy por hoy se hace uso para proyectos públicos a nivel general.
+
+---
+# A grosso modo
+
+--
+
+<img src="images/case01.png" width="780" />
 
 ---
 class: inverse, middle
@@ -361,6 +346,30 @@ ft1 <- color(ft1, part = "footer", color = "#666666")
 ft1 <- set_caption(ft1, caption = "Tipos de costos")
 ft1
 ```
+
+---
+# Minimizar Costos: Aplicación
+
+--
+
+Un ejemplo relevante donde se busca **minimizar los costos** en una evaluación económica es al comparar dos tratamientos para hipertensión arterial. Supongamos que existen dos medicamentos 
+
+`r fa("info-circle", fill="red")` .RRed[Medicamento A] (un fármaco de prescripción) y .hi-orange[Medicamento B] (una nueva droga más cara pero con un mejor perfil terapéutico).
+
+--
+
+La **evaluación económica** se enfoca en determinar cuál es la alternativa más rentable para el sistema sanitario, teniendo en cuenta no solo los costos directos de las fórmulas farmacéuticas sino también los posibles .hi-pink[ahorros generales] derivados de un mejor control de la hipertensión y una reducción del riesgo cardiovascular.
+
+--
+
+Los resultados podrían demostrar que si bien .hi-orange[Medicamento B] tiene un costo por uso mayor al del .RRed[medicamento A], en promedio reduce el **número total de hospitalizaciones** por complicaciones crónicas relacionadas con la hipertensión y los accidentes cerebrovasculares. Estos .hi-pink[ahorros generales] podrían compensar mejor que .hi-orange[Medicamento B] su costo inicial más alto.
+
+---
+# Minimizar Costos: Aplicación
+
+--
+
+> Por lo tanto, si se desea minimizar el costo económico en general para las personas afectadas por la hipertensión arterial y para los sistemas sanitarios públicos o privados involucrados, un análisis riguroso de este tipo podría llevar a recomendar Medicamento B como una opción más sostenible.
 
 ---
 
@@ -633,6 +642,28 @@ class: live-code
 --
 
 1. .RRed[Tomar la decisión]
+
+---
+class: your-turn
+
+# <i class="fas fa-cloud"></i>
+
+## Actividad Pre-Final: dirijase a
+
+<https://www.socrative.com/>
+
+### Siga las siguientes instrucciones:
+
+1. Ingrese como estudiante
+
+2. Coloque su nombre completo
+
+3. Responda cada una de las preguntas
+
+```{r echo = FALSE}
+countdown(minutes = 15, update_every = 20)
+```
+
 
 
 
