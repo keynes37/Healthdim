@@ -598,8 +598,7 @@ El .hi-pink[QALY] se utiliza para comparar la **efectividad** de diferentes inte
 
 --
 
-
-_Recordemos el casod de vacunación para VPH_: Costo por Año de Vida Ajustado por Calidad (QALY) Ganado: La vacunación tiene un costo de `$1,000` por QALY ganado, mientras que el no vacunación tiene un costo de `$5,000` por QALY ganado.
+`r fa("bell", fill="red")` Recordemos el caso de vacunación para VPH: Costo por Año de Vida Ajustado por Calidad (QALY) Ganado: La vacunación tiene un costo de `$1,000` por QALY ganado, mientras que el no vacunación tiene un costo de `$5,000` por QALY ganado.
 
 --
 
@@ -679,7 +678,7 @@ Hay que enmarcar la posibilidad de la aleatorización de los pacientes que será
 
 --
 
-- Hacer una lista de todas las .hi-slate[posibles intervenciones] o tratamientos que podrían abordar el problema.
+Hacer una lista de todas las .hi-slate[posibles intervenciones] o tratamientos que podrían abordar el problema.
 
 --
 
@@ -784,7 +783,7 @@ ft3
 - Indirectos: Incremento de $300 por persona en productividad (menos días de trabajo perdidos).
 - Intangibles: Mejora en la calidad de vida valorada en $200 por persona.
 
--- 
+--
 
 .hi-pink[Descuento]: Supongamos una tasa de descuento del 3% anual para ajustar los valores futuros.
 
@@ -810,13 +809,15 @@ En este *ejemplo*, el .hi-pink[programa de ejercicio] tiene un BCR de 2.14, lo q
 
 --
 
-Supongamos que esperas recibir $1,000 en 3 años y la tasa de descuento es del 3% anual. Para calcular el valor presente, usarías la fórmula de la siguiente manera:
+Supongamos que esperas recibir $1,500 en 3 años y la tasa de descuento es del 3% anual. Para calcular el valor presente, usarías la fórmula de la siguiente manera:
 
-$$VP=\dfrac{1000}{(1+0.03)^{3}} \approx 915.14$$
+$$VP=\dfrac{1500}{(1+0.03)^{3}} \approx 1,372.71$$
 
 --
 
-Esto significa que `$1,000` recibidos en 3 años tienen un valor presente de aproximadamente `$915.84` hoy, si la tasa de descuento es del 3%.
+Esto significa que `$1,500` recibidos en 3 años tienen un valor presente de aproximadamente `$1,372.71` hoy, si la tasa de descuento es del 3%.
+
+Y el resto??? 🤪
 
 
 
