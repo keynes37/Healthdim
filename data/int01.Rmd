@@ -127,7 +127,7 @@ text_tbl <- data.frame(
     "Mitad de jornada",
     "Hasta la siguiente semana", 
     "Inter-sesiones",
-    "Semana Final: Febrero 24"
+    "Semana Final"
   ),
   Porcentaje = c ("20%","10%","20%","20%", "30%")
 )
@@ -146,13 +146,13 @@ class: middle, center
 
 | Hora          | Actividad                               |
 |:--------------|:----------------------------------------|
-| 14:30 - 14:45 | Presentación participantes              |
-| 14:45 - 15:50 | Sesión 1 (Introducción)                 |
+| 14:00 - 14:15 | Presentación participantes              |
+| 14:15 - 15:50 | Sesión 1 (Introducción)                 |
 | 15:50 - 16:05 | *Break* `r emo::ji("coffee")`           |
 | 16:05 - 16:45 | Sesión 2 (Actividad 1)                  |
 | 16:45 - 17:15 | Discusión (Actividad 1)                 |
 | 17:15 - 17:30 | *Break* `r emo::ji("tea")`              |
-| 17:30 - 18:15 | Sesión 3 (Contextualizando)             |
+| 17:30 - 18:00 | Sesión 3 (Contextualizando)             |
 
 ---
 class: middle, center
@@ -479,21 +479,19 @@ class: your-turn
 
 ## Actividad 1: Revise el siguiente enlace
 
-<https://www.youtube.com/watch?v=pQO3EZS9ICw>
+<https://www.youtube.com/watch?v=yiNfSOTLskw>
 
 ### Intente responder:
 
-a. Cómo se define entonces la economía de la salud?
+a. Cuál es el mensaje principal que le deja el presentador?
 
-b. Qué mensaje le deja la presentación?
+b. Qué eventos similares ha experimentado?
 
-c. Como lo aplicaría a la solución de un problema de su área de estudio?
+c. Como lo aplicaría a la solución de un problema de su área de trabajo?
 
 ```{r echo = FALSE}
 countdown(minutes = 30, update_every = 35)
 ```
-
-
 
 ---
 class: inverse, middle
