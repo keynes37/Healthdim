@@ -245,9 +245,128 @@ class: live-code
 
 --
 
-**Innovación en Tecnología Médica**: Taiwán ha sido pionero en la digitalización de la salud con su .RRed[sistema de tarjetas de salud electrónicas], que almacenan _información médica_ de los pacientes, permitiendo un acceso rápido a los registros médicos en cualquier parte del país. Este sistema ha jugado un papel crucial en la gestión de la pandemia de COVID-19.
+**Innovación en Tecnología Médica**: Taiwán ha sido pionero en la digitalización de la salud con su .RRed[sistema de tarjetas de salud electrónicas], que almacenan _información médica_ de los pacientes, permitiendo un acceso rápido a los registros médicos en cualquier parte del país. Este sistema ha jugado un papel crucial en la gestión de la pandemia de 
+COVID-19.
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e8/The_movie_doctor%2C_by_G._Francis_Kauffman.svg)
+background-size: contain
+
+### Miremos mas características
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelo Beveridge – Sistema Nacional de Salud
+
+--
+
+**Financiamiento Público**:  
+El sistema se financia principalmente a través de .RRed[impuestos generales]. Esto permite que el acceso a los servicios de salud no dependa del **ingreso individual** ni del historial laboral, reforzando el principio de la salud como derecho social.
+
+--
+
+**Cobertura Universal**:  
+Todos los residentes tienen derecho a la atención médica. La cobertura es amplia y suele incluir atención primaria, hospitalaria y servicios preventivos, con bajos o nulos pagos directos al momento de la atención.
+
+--
+
+**Rol del Estado**:  
+El Estado actúa como **principal financiador** y, en muchos casos, como proveedor directo de servicios. Esto facilita la planificación del sistema y el control del gasto agregado en salud.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelo Beveridge – Sistema Nacional de Salud
+
+--
+
+**Desafíos**:  
+Entre los principales retos se encuentran las _listas de espera_, las restricciones presupuestarias y la presión fiscal asociada al envejecimiento poblacional y al aumento de la demanda por servicios de salud.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelo Bismarck – Seguro Social de Salud
+
+--
+
+**Financiamiento vía Cotizaciones**:  
+El sistema se financia principalmente mediante aportes obligatorios de trabajadores y empleadores. Estas contribuciones se canalizan a través de fondos o cajas de seguro de salud.
+
+--
+
+**Pluralidad de Aseguradores**:  
+Existen múltiples aseguradores, generalmente sin ánimo de lucro, que compiten de manera regulada. El Estado cumple un rol clave en la supervisión y en la definición de los beneficios cubiertos.
+
+--
+
+**Relación con el Empleo**:  
+Históricamente, la cobertura ha estado vinculada al empleo formal, aunque muchos países han implementado mecanismos para extender la cobertura a personas desempleadas o en condiciones de vulnerabilidad.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelo Bismarck – Seguro Social de Salud
+
+--
+
+**Desafíos**:  
+El principal reto es la _segmentación_, especialmente en contextos con alta informalidad laboral, así como los costos administrativos derivados de la coexistencia de múltiples aseguradores.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelo de Mercado – Seguros Privados
+
+--
+
+**Financiamiento Privado**:  
+La atención médica se financia mayoritariamente mediante pagos directos y seguros privados voluntarios. El acceso a los servicios depende en gran medida de la capacidad de pago de los individuos.
+
+--
+
+**Libertad de Elección**:  
+Los pacientes suelen tener una amplia libertad para elegir médicos, hospitales y tratamientos, especialmente en los segmentos de mayores ingresos.
+
+--
+
+**Innovación y Tecnología**:  
+Este modelo suele fomentar la innovación médica y tecnológica, impulsada por incentivos de mercado y competencia entre proveedores.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelo de Mercado – Seguros Privados
+
+--
 
 
+**Desafíos Estructurales**:  
+Presenta problemas severos de _selección adversa_, exclusión de poblaciones vulnerables, altos costos de atención y desigualdades marcadas en los resultados de salud.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelos Mixtos – América Latina
+
+--
+
+**Financiamiento Mixto**:  
+Combinan recursos provenientes de impuestos generales, cotizaciones a la seguridad social y pagos privados. Esto permite ampliar la cobertura, pero introduce complejidad institucional.
+
+--
+
+**Aseguramiento Segmentado**:  
+Coexisten regímenes públicos y privados, a menudo asociados al nivel de ingreso o a la condición laboral de las personas.
+
+--
+
+**Provisión Fragmentada**:  
+Los servicios de salud son prestados por una combinación de instituciones públicas y privadas, lo que puede generar problemas de coordinación y continuidad en la atención.
+
+---
+# ¿Pero qué tienen esos sistemas de salud?
+#### Modelos Mixtos – América Latina
+
+--
+
+**Desafíos**:  
+La principal dificultad es la _inequidad_ entre regímenes, junto con problemas de gobernanza, sostenibilidad financiera y calidad desigual de los servicios.
 
 ---
 class: inverse, middle, center
@@ -274,6 +393,18 @@ background-size: contain
 --
 
 `r fa("home", fill="red")` En el sentido *económico* va en línea en la cantidad de tiempo o recursos que se han .RRed[consumido] para producir un **bien/servicio**.
+
+---
+# Productividad 
+
+--
+
+La productividad en salud se refiere a la relación entre los **recursos utilizados** (personal, camas, insumos) y los **servicios o resultados obtenidos** (consultas, cirugías, vidas salvadas).
+
+--
+
+Un sistema productivo no es el que atiende más pacientes,  
+sino el que logra **mejores resultados clínicos** con los **menores recursos posibles**, sin deteriorar la calidad.
 
 ---
 # Productividad
@@ -354,6 +485,24 @@ EL UVR trata de incluir:
 + Hacer uso de la tecnología para reducir costos
 + Asignaciones de población a grupos médicos 
 
+---
+# Ejemplo: Productividad hospitalaria en Colombia
+
+--
+
+Un hospital público de nivel II en Colombia tiene en promedio:
+- 100 camas hospitalarias  
+- 30 médicos  
+- Presupuesto anual limitado
+
+Durante un año:
+- Hospital A realiza 8.000 egresos  
+- Hospital B realiza 10.000 egresos
+
+--
+
+Si Hospital B mantiene tasas similares de complicaciones y mortalidad,  
+podemos decir que **es más productivo**, no necesariamente que “trabaja más”.
 
 ---
 class: inverse, middle, center
@@ -436,19 +585,12 @@ knitr::include_graphics("images/Estestado.png")
 --
 
 <div align="center">
-<font size="+8">511 Billones PGN</font>
+<font size="+8">556,9 Billones PGN</font>
 </div align="center">
 
 --
 
-..."Repartidos por sectores, los renglones con mayor apropiación para el PGN 2025 son: .RRed[educación], con $70,45 billones; .RRed[salud y protección social], $61,5 billones; defensa y policía, $56,01 billones; Hacienda, $47,3 billones; trabajo, $44,37 billones; Transporte $15,2 billones."... Fuente: DNP.
-
----
-# Estado
-
---
-
-<img src="images/dian2023.png" width="580" />
+..."Repartidos por sectores, los renglones con mayor apropiación para el PGN 2026 son: .RRed[Inversión Pública], con $88,45 billones; .RRed[salud y protección social], $78,1 billones; defensa y policía, $68,01 billones; Hacienda, $47,3 billones; trabajo, $59,2 billones; Transporte $20,2 billones."... Fuente: DNP.
 
 ---
 class: middle, inverse,
@@ -474,7 +616,7 @@ class: middle, inverse,
 pop_df = 
   data.frame(
   lang = c("Colombia", "Alemania", "España", "EEUU", "Brasil"),
-  n_rate = c(30.2, 27.9, 19.7, 22.7, 36.3),
+  n_rate = c(43.2, 29.8, 21.5, 22.7, 38.3),
   free = c(F, T, T, T, F)
   )
 ## Graficando
@@ -489,7 +631,7 @@ pop_df %>%
   ylab("Porcentaje (%) del PIB") +
   labs(
     title = "Gasto Público",
-    subtitle = "Banco Mundial, 2019/20"
+    subtitle = "Banco Mundial, 2024/25"
     ) +
   scale_fill_manual(
     "Región Norte",
@@ -509,8 +651,8 @@ pop_df %>%
 ```{R, graph02, fig.height=5, fig.width=7, message=FALSE, warning=FALSE, dev="svg", echo=F}
 # Datos
 data <- data.frame(
-  year = c(2010:2023),
-  value = c(30.35, 30.23, 29.09, 30, 31.26, 31.28, 29.9, 29.32, 34.66, 32.88, 33.56, 34.51, 35.04, 36.13)
+  year = c(2010:2025),
+  value = c(30.35, 30.23, 29.09, 30, 31.26, 31.28, 29.9, 29.32, 34.66, 32.88, 33.56, 34.51, 35.04, 36.13, 34.18, 43.21)
 )
 
 # plot
@@ -519,7 +661,7 @@ p <- ggplot(data, aes(x=year, y=value)) +
   geom_hline(yintercept = 0) +
   labs(
     title = "Evolución del Gasto Público Colombiano",
-    subtitle = "Banco Mundial, 2010-2021"
+    subtitle = "Banco Mundial, 2010-2025"
     ) +
   xlab("Años") +
   ylab("Gasto Público como % PIB") +
@@ -552,8 +694,8 @@ background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/03/New_Yo
 background-size: cover
 
 <font size="+6">.hi-orange[Nuestro Presupuesto]</font> <br>
-<font size="+3">500 Billones de pesos</font> <br>
-<font size="+2">.hi-orange[Aprobado por el congreso para 2024]</font> 
+<font size="+3">557 Billones de pesos</font> <br>
+<font size="+2">.hi-orange[Aprobado por el congreso para 2026]</font> 
 
 ---
 class: middle
@@ -569,7 +711,7 @@ background-size: contain
 background-position: -8.5cm 50%
 
 .pull-left[
-<font size="+7">$204 Billones de pesos</font> <br>
+<font size="+7">$300 Billones de pesos</font> <br>
 <font size="+3"> .hi-orange[Tributos]</font>
 ]
 
@@ -588,36 +730,62 @@ background-position: -8.5cm 50%
 
 ```{R, graph03, fig.height=6, fig.width=8, message=FALSE, warning=FALSE, dev="svg", echo=F}
 # Datos
-data <- data.frame(
-  category=c("IVA", "Renta Naturales", "Renta Juridica", "Patrimonio", "SSS", "Otros", "Otros BBSS"),
-  count=c(29, 7, 25, 10, 10, 8, 11)
+library(tidyverse)
+library(ggthemes)
+
+tax_df <- data.frame(
+  tipo = c(
+    "Ret. renta",
+    "Ventas",
+    "Aduanas",
+    "Otros",
+    "Renta"
+  ),
+  monto = c(84.2, 53.9, 41.9, 35.9, 33.02),
+  clasificacion = c(
+    "Directo",
+    "Indirecto",
+    "Indirecto",
+    "Indirecto",
+    "Directo"
+  )
 )
 
-# Compute percentages
-#data$fraction <- data$count / sum(data$count)
+# Lo demas
 
-# Compute the cumulative percentages 
-data$ymax <- cumsum(data$count)
+tax_df %>%
+  ggplot(aes(
+    x = reorder(tipo, -monto),
+    y = monto,
+    fill = clasificacion
+  )) +
+  geom_col(width = 0.55) +   # barras delgadas
+  geom_hline(yintercept = 0, color = "gray40") +
+  scale_y_continuous(
+    labels = scales::comma_format(decimal.mark = ",")
+  ) +
+  scale_fill_manual(
+    name = "Tipo de impuesto",
+    values = c(
+      "Directo" = "#f92672",
+      "Indirecto" = "darkslategray"
+    )
+  ) +
+  labs(
+    title = "Recaudo tributario por tipo de impuesto",
+    subtitle = "Primeros 10 meses del año",
+    x = "Fuente del recaudo",
+    y = "Billones de pesos"
+  ) +
+  ggthemes::theme_pander(base_size = 17) +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(size = 13),
+    plot.title = element_text(face = "bold")
+  )
 
-# Compute the bottom of each rectangle
-data$ymin <- c(0, head(data$ymax, n=-1))
-
-# Compute label position
-data$labelPosition <- (data$ymax + data$ymin) / 2
 
 
-# Compute a good label
-data$label <- paste0(data$category, "\n Porcentaje: ", data$count)
-
-# Make the plot
-ggplot(data, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=category)) +
-  geom_rect() +
-  geom_label( x=3.5, aes(y=labelPosition, label=label), size=3) +
-  scale_fill_brewer(palette=4) +
-  coord_polar(theta="y") +
-  xlim(c(2, 4)) +
-  theme_void() +
-  theme(legend.position = "none")
 ```
 
 ---
