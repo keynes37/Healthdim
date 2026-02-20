@@ -1,6 +1,6 @@
 ---
 title: "Evaluación Económica"
-session: "05"
+session: "04"
 subtitle: "Universidad del Norte"
 author: Carlos Yanes Guerra
 date: "`r Sys.Date()`"
@@ -115,12 +115,12 @@ class: middle, center
 
 | Hora          | Actividad                                 |
 |:--------------|:------------------------------------------|
-| 15:30 - 15:40 | Preguntas generales                       |
-| 15:40 - 15:55 | Instrucción comentadores                  |
-| 15:55 - 16:40 | Sesión 9 (Modelos de evaluación económica)|
-| 16:40 - 17:15 | *Break* `r emo::ji("coffee")`             |
-| 17:15 - 17:10 | Comentarios varios                        |
-| 17:10 - 18:25 | Actividad final                           |
+| 14:00 - 14:20 | Preguntas generales                       |
+| 14:20 - 15:00 | Instrucción comentadores                  |
+| 15:00 - 16:40 | Sesión  (Modelos de evaluación económica)|
+| 16:20 - 16:50 | *Break* `r emo::ji("coffee")`             |
+| 16:50 - 17:10 | Comentarios varios                        |
+| 17:10 - 18:00 | Actividad Quiz                           |
 
 ---
 layout: true
@@ -133,6 +133,10 @@ layout: true
 
 --
 
+1. Esquema Tarifario óptimo
+
+--
+
 1. Mirar el concepto de evaluación económica
 
 --
@@ -142,6 +146,188 @@ layout: true
 --
 
 1. Analizar los estados de la evaluación económica
+
+
+---
+class: inverse, middle
+
+# Tarifas
+
+--
+
+#### Qué cobramos
+
+---
+# Idea normal
+
+--
+
+> Un esquema tarifario en salud es el **mecanismo** mediante el cual se remunera a los prestadores.
+
+--
+
+.blue[Desde la teoría económica] el sistema tarifario deberia contener:
+
+--
+
++ Maximizar bienestar social
++ Minimizar riesgo moral
++ Incentivar eficiencia productiva
++ Controlar gasto
++ Garantizar calidad
+
+---
+# Problema económico real
+
+--
+
+.blue[Asimetría de información]:
+
+--
+
++ Médico sabe más que paciente
++ Hospital sabe más que asegurador
++ Asegurador sabe más que Estado
+
+--
+
+Entonces el problema es:
+
+--
+
+>¿Cómo pagar sin generar sobreutilización o subutilización?
+
+---
+# Esquemas tarifarios
+
+--
+
+| Esquema                     | Incentivo                |
+|-----------------------------|--------------------------|
+| Fee-for-service             | Sobreproducción          |
+| Capitación                  | Subproducción            |
+| Pago por caso (DRG)         | Eficiencia en duración   |
+| Presupuesto global          | Control de gasto         |
+| Pago por desempeño          | Calidad                  |
+
+---
+background-size: 100%
+background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzN1eW91MGhiNTBxbHAwbGFjcHAyb2k4ZWtzNmxyeWtlcWIzbnhzMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JebifwZIycdlHlm/giphy.gif)
+
+???
+
+Image test. Taken from gyfty.
+
+
+
+---
+# Esquema Colombiano
+
+--
+
+En Colombia tenemos:
+
+--
+
++ EPS (aseguradores)
++ IPS (prestadores)
++ ADRES (flujo financiero)
+  + UPC (Unidad de Pago por Capitación)
+
+--
+
+El sistema combina:
+
+--
++ Capitación para EPS
++ Contratos mixtos EPS-IPS (evento, paquete, capitación)
+
+---
+# Fallas en Colombia
+
+--
+
+`r fa("angle-double-right", fill="blue")` Uno de los principales **cuestionamientos** al esquema colombiano es la .blue[insuficiencia técnica] en el cálculo de la UPC. Si la **Unidad de Pago por Capitación** no refleja adecuadamente el perfil epidemiológico, el envejecimiento poblacional o las diferencias regionales en costos, el sistema comienza a operar estructuralmente en déficit. No es solo un problema de gestión: es un problema actuarial.
+
+--
+
+`r fa("angle-double-right", fill="blue")` Se critica también la **integración vertical**. Cuando una EPS es propietaria de IPS, puede existir incentivo a priorizar redes propias, limitar remisiones externas o trasladar riesgos financieros internamente. Desde la teoría económica, esto puede reducir .blue[competencia efectiva] y distorsionar asignación eficiente.
+
+---
+# Déficit por UPC
+
+--
+
+Supongamos 😬 por un ejemplo que la UPC es de 1'200.000 por paciente. Pero su costo real es de 1'350.000. vamos a encontrar:
+
+--
+
+$$\text{Deficit}=1.350.000-1.200.000= 150.000$$
+
+--
+
+Múltiplique eso por **un millón de afiliados** 🥲 (es un cálculo aproximado)
+
+--
+
+> Sin necesidad de corrupción, usted tendrá un déficit estructural de 150 mil millones de pesos.
+
+---
+# Por qué existe el copago en Colombia?
+
+--
+
+Cuando el **precio** que enfrenta el usuario es cero, .pink[el consumo] tiende a aumentar.
+
+--
+
+En salud eso implica:
+	+ Consultas innecesarias
+	+ Uso excesivo de urgencias
+	+ Solicitud de exámenes sin necesidad clínica
+
+--
+
+> El copago introduce un pequeño costo al usuario para moderar demanda.
+
+--
+
+No busca financiar el sistema de forma significativa, sino .pink[disciplinar consumo].
+
+---
+# Grupos de pagos
+
+--
+
+Porque el sistema colombiano es .pink[progresivo].
+
+--
+
+Los grupos están organizados por nivel de ingreso:
+	+	Grupo A: menores ingresos → menor copago
+	+	Grupo B: ingresos medios → copago intermedio
+	+	Grupo C: mayores ingresos → mayor copago
+
+--
+
+Esto responde a dos principios:
+
+--
+
+Capacidad de Pago
+
+--
+
+Equidad horizontal y vertical
+
+---
+class: inverse, middle
+
+# Miremos la parte de evaluación
+
+--
+
+#### Ideas de evaluación
 
 ---
 # Conceptos claves
